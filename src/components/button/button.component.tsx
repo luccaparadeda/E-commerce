@@ -1,4 +1,3 @@
-import { ButtonHTMLAttributes } from 'react'
 import './button.styles.scss'
 
 const BUTTON_TYPE_CLASSES:any= {
@@ -6,9 +5,10 @@ const BUTTON_TYPE_CLASSES:any= {
     inverted: 'inverted'
 }
 
-export const Button = ({children, buttonType}:any) => {
+export const Button = ({children, buttonType, ...otherProps}:any) => {
     return(
         <button className={`button-container ${BUTTON_TYPE_CLASSES[buttonType]}`}
+        {...otherProps}
         >{children}
         </button>
     )
