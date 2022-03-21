@@ -1,4 +1,3 @@
-import { title } from 'process'
 import './category-item.styles.scss'
 
 export const CategoryItem = ({ category }:any) => {

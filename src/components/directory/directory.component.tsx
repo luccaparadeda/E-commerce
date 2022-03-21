@@ -1,5 +1,5 @@
 import { Category } from "../../Interfaces"
-import { CategoryItem } from "../category-item.component"
+import { CategoryItem } from "../category/category-item.component"
 import './directory.styles.scss'
 
 export const Directory = ({categories}:any) => {
