@@ -2,14 +2,8 @@ import { Route, Routes } from 'react-router-dom';
 import { Home } from './routes/home/home.component';
 import { Navigation } from './routes/navigation/navigation.component';
 import { Authentication } from './routes/authentication/authentication.component';
-
-
-  const Shop = () => {
-    return(
-      <h1>Shop</h1>
-    )
-  }
-
+import {Shop} from './routes/shop/shop.component'
+import { Checkout } from './routes/checkout/checkout.component';
 
   const App = () => {
     return(
@@ -18,6 +12,7 @@ import { Authentication } from './routes/authentication/authentication.component
             <Route index element={<Home/>}/>
             <Route path='shop' element={<Shop/>}/>
             <Route path='auth' element={<Authentication/>}/>
+            <Route path='confirmation' element={<Checkout/>}/>
         </Route>
       </Routes>
     )
