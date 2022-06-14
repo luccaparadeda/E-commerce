@@ -86,6 +86,8 @@ export const createUserDocumentFromAuth = async (userAuth: { uid: string; displa
       console.log('error creating user', error.message)
       }
   }
+
+  return userSnapshot
 }
 
 export const createAuthUserWithEmailAndPassword = async(email: string, password: string) => {
@@ -102,3 +104,16 @@ export const signOutUser = async() => await signOut(auth)
 
 export const onAuthStateChangedListener = (callback:any) => 
 onAuthStateChanged(auth, callback)
+
+export const getCurrentUser = () => {
+  return new Promise((resolve, reject) => {
+    const unsusbscribe = onAuthStateChanged(
+      auth,
+      ( userAuth ) => {
+        unsusbscribe()
+        resolve(userAuth)
+      },
+      reject
+    )
+  })
+}
